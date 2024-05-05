@@ -2,12 +2,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
-public class Animal {
+public abstract class Animal {
     protected String name;
     protected LocalDate birthDate;
     protected List<String> vaccianations;
     protected String illness;
     protected String owner;
+    protected String type;
 
     public Animal(String name, LocalDate birthDate, List<String> vaccianations, String illness, String owner) {
         this.name = name;
@@ -15,6 +16,7 @@ public class Animal {
         this.vaccianations = vaccianations;
         this.illness = illness;
         this.owner = owner;
+        this.type = getClass().getSimpleName();
     }
 
     public String getName() {
@@ -62,49 +64,9 @@ public class Animal {
     private void sleep(){
         System.out.println("Animal sleeping");
     }
-    public void lifeCycle(){
-        wakeup();
-        eat();
-        play();
-        sleep();
-    }
-    private void toGo(){
+    //public abstract void lifeCycle();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Животное умеет бегать?");
-        String input = scanner.nextLine();
-        if(input.equals("Да")){
-            System.out.println("Animal going");
-        }
-        else {
-            System.out.println("Животное не умеет бегать");
-        }
-    }
-    private void fly(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Животное умеет летать?");
-        String input = scanner.nextLine();
-        if(input.equals("Да")){
-            System.out.println("Animal flies");
-        }
-        else {
-            System.out.println("Животное не умеет летать");
-        }
-    }
-    private void swim(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Животное умеет плавать?");
-        String input = scanner.nextLine();
-        if(input.equals("Да")){
-            System.out.println("Animal swims");
-        }
-        else {
-            System.out.println("Животное не умеет плавать");
-        }
-    }
-    public void movement(){
-        toGo();
-        fly();
-        swim();
-    }
+
+
+
 }
