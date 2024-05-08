@@ -11,7 +11,8 @@ public class Clinic {
     }
 
     public void addPatients(Animal... animals) {
-        Collections.addAll(patients, animals);
+        if(animals.length == 0) System.out.println("Вы не добавили ни одного животного");
+        else Collections.addAll(patients, animals);
     }
 
     public List<Goable> getGoables() {
